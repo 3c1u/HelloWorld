@@ -1,0 +1,22 @@
+﻿@page
+@model HelloWorld.Pages.IndexModel
+@{
+}
+<!doctype html>
+<meta charset="utf-8" />
+@if (Model.Answer != null && Model.Answer.Length != 0)
+{
+    <h2>結果</h2>
+    <p>あなたの答えは、<b>@Model.Answer</b> で、<b>@Model.Message</b> です。</p>
+}
+else
+{
+    <h2>問題</h2>
+}
+@if (!Model.IsCorrect)
+{
+    <form method="get">
+        <input name="answer" />
+        <input type="button" value="答え合わせ" />
+    </form>
+}
